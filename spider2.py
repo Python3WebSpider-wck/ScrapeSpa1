@@ -19,7 +19,7 @@ collection = db['movies']
 def scrape_api(url):
     logging.info('scraping %s...', url)
     try:
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         if response.status_code == 200:
             return response.json()
         logging.error('get invalid status code %s while scraping %s',
@@ -36,7 +36,8 @@ def scrape_index(page):
     return scrape_api(url)
 
 
-DETAIL_URL = 'https://dynamic1.scrape.center/api/movie/{id}'
+# DETAIL_URL = 'https://dynamic1.scrape.center/api/movie/{id}'
+DETAIL_URL = 'https://spa1.scrape.center/api/movie/{id}'
 
 
 def scrape_detail(id):
