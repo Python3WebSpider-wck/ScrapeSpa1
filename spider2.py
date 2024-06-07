@@ -45,7 +45,7 @@ def scrape_detail(id):
     return scrape_api(url)
 
 
-TOTAL_PAGE = 10
+TOTAL_PAGE = 1
 
 
 def save_data(data):

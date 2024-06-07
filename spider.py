@@ -27,12 +27,12 @@ def scrape_api(url):
         logging.error('error occurred while scraping %s', url, exc_info=True)
 
 
-def scrape_index(page):
+def scrape_index(page: int):
     url = INDEX_URL.format(limit=LIMIT, offset=LIMIT * (page - 1))
     return scrape_api(url)
 
 
-def scrape_detail(id):
+def scrape_detail(id: int):
     url = DETAIL_URL.format(id=id)
     return scrape_api(url)
 
